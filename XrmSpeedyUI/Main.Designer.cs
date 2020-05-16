@@ -96,6 +96,8 @@
             this.btnAuthenticate = new System.Windows.Forms.Button();
             this.grpTables = new System.Windows.Forms.GroupBox();
             this.grpEntity = new System.Windows.Forms.GroupBox();
+            this.label51 = new System.Windows.Forms.Label();
+            this.txtEntityPrimaryFieldSize = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
@@ -882,6 +884,8 @@
             // 
             // grpEntity
             // 
+            this.grpEntity.Controls.Add(this.label51);
+            this.grpEntity.Controls.Add(this.txtEntityPrimaryFieldSize);
             this.grpEntity.Controls.Add(this.label36);
             this.grpEntity.Controls.Add(this.label35);
             this.grpEntity.Controls.Add(this.label34);
@@ -902,6 +906,27 @@
             this.grpEntity.TabIndex = 10;
             this.grpEntity.TabStop = false;
             this.grpEntity.Visible = false;
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label51.Location = new System.Drawing.Point(146, 97);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(89, 13);
+            this.label51.TabIndex = 23;
+            this.label51.Text = "Primary Field Size";
+            // 
+            // txtEntityPrimaryFieldSize
+            // 
+            this.txtEntityPrimaryFieldSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEntityPrimaryFieldSize.Location = new System.Drawing.Point(156, 112);
+            this.txtEntityPrimaryFieldSize.MaxLength = 39;
+            this.txtEntityPrimaryFieldSize.Name = "txtEntityPrimaryFieldSize";
+            this.txtEntityPrimaryFieldSize.Size = new System.Drawing.Size(53, 20);
+            this.txtEntityPrimaryFieldSize.TabIndex = 22;
+            this.txtEntityPrimaryFieldSize.Validating += new System.ComponentModel.CancelEventHandler(this.txtEntityPrimaryFieldSize_Validating);
+            this.txtEntityPrimaryFieldSize.Validated += new System.EventHandler(this.txtEntityPrimaryFieldSize_Validated);
             // 
             // label36
             // 
@@ -937,7 +962,7 @@
             // 
             this.lblEntityPrefix.AutoSize = true;
             this.lblEntityPrefix.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEntityPrefix.Location = new System.Drawing.Point(6, 122);
+            this.lblEntityPrefix.Location = new System.Drawing.Point(6, 115);
             this.lblEntityPrefix.Name = "lblEntityPrefix";
             this.lblEntityPrefix.Size = new System.Drawing.Size(51, 13);
             this.lblEntityPrefix.TabIndex = 10;
@@ -946,10 +971,10 @@
             // txtEntitySchemaName
             // 
             this.txtEntitySchemaName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEntitySchemaName.Location = new System.Drawing.Point(57, 119);
+            this.txtEntitySchemaName.Location = new System.Drawing.Point(57, 112);
             this.txtEntitySchemaName.MaxLength = 39;
             this.txtEntitySchemaName.Name = "txtEntitySchemaName";
-            this.txtEntitySchemaName.Size = new System.Drawing.Size(155, 20);
+            this.txtEntitySchemaName.Size = new System.Drawing.Size(93, 20);
             this.txtEntitySchemaName.TabIndex = 9;
             this.txtEntitySchemaName.Validating += new System.ComponentModel.CancelEventHandler(this.txtEntitySchemaName_Validating);
             this.txtEntitySchemaName.Validated += new System.EventHandler(this.txtEntitySchemaName_Validated);
@@ -991,11 +1016,11 @@
             // txtEntityDescription
             // 
             this.txtEntityDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEntityDescription.Location = new System.Drawing.Point(6, 158);
+            this.txtEntityDescription.Location = new System.Drawing.Point(6, 165);
             this.txtEntityDescription.MaxLength = 200;
             this.txtEntityDescription.Multiline = true;
             this.txtEntityDescription.Name = "txtEntityDescription";
-            this.txtEntityDescription.Size = new System.Drawing.Size(206, 40);
+            this.txtEntityDescription.Size = new System.Drawing.Size(206, 33);
             this.txtEntityDescription.TabIndex = 5;
             this.txtEntityDescription.Validated += new System.EventHandler(this.txtEntityDescription_Validated);
             // 
@@ -1003,7 +1028,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(6, 142);
+            this.label5.Location = new System.Drawing.Point(6, 148);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 13);
             this.label5.TabIndex = 4;
@@ -1633,6 +1658,8 @@
         private System.Windows.Forms.Label label18;
         private System.ComponentModel.BackgroundWorker bgWorkerDelete;
         private System.Windows.Forms.CheckBox chkSkipPrefixForRelationships;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.TextBox txtEntityPrimaryFieldSize;
     }
 }
 

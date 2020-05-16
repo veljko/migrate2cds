@@ -8,7 +8,7 @@ namespace XrmSpeedy
         public string OriginalTable { get; set; }
         public EntityMetadata EntityMetadata { get; set; }
         public bool Import { get; set; }
-        public int PrimaryNameSize { get; set; }
+        public int PrimaryFieldSize { get; set; }
         public List<XRMSpeedyField> Fields { get; set; }
         public List<XRMSpeedyRelationship> Relationships { get; set; }
 
@@ -16,7 +16,7 @@ namespace XrmSpeedy
         {
             OriginalTable = originalTable;
             Import = import;
-            PrimaryNameSize = 100;
+            PrimaryFieldSize = 100;
             EntityMetadata = new EntityMetadata();
             EntityMetadata.SchemaName = (prefix + "_" + originalTable).ToLower();
             EntityMetadata.DisplayName = new Microsoft.Xrm.Sdk.Label(originalTable, 1033);
