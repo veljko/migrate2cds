@@ -325,6 +325,7 @@ namespace XrmSpeedyUI
 
                 if (clbTables.SelectedIndex != -1)
                 {
+                    
                     grpEntity.Visible = true;
                     grpField.Visible = false;
                     GetTableEntity();
@@ -1981,7 +1982,9 @@ namespace XrmSpeedyUI
 
         private string CreateRelationshipSchemaName(string entity1, string entity2)
         {
-            return string.Concat(txtPrefix.Text.Trim(), "_", entity1, "_", entity2);
+            return chkSkipPrefixForRelationships.Checked 
+                ? string.Concat(entity1, "_", entity2) 
+                : string.Concat(txtPrefix.Text.Trim(), "_", entity1, "_", entity2);
         }
 
         private string GetEntityDisplayName(string logicalName)

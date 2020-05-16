@@ -85,6 +85,7 @@
             this.label30 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.grpConnection = new System.Windows.Forms.GroupBox();
+            this.chkSkipPrefixForRelationships = new System.Windows.Forms.CheckBox();
             this.label33 = new System.Windows.Forms.Label();
             this.btnRestart = new System.Windows.Forms.Button();
             this.txtPrefix = new System.Windows.Forms.TextBox();
@@ -747,6 +748,7 @@
             // 
             // grpConnection
             // 
+            this.grpConnection.Controls.Add(this.chkSkipPrefixForRelationships);
             this.grpConnection.Controls.Add(this.label33);
             this.grpConnection.Controls.Add(this.btnRestart);
             this.grpConnection.Controls.Add(this.txtPrefix);
@@ -763,6 +765,16 @@
             this.grpConnection.TabIndex = 23;
             this.grpConnection.TabStop = false;
             this.grpConnection.Text = "Step 1";
+            // 
+            // chkSkipPrefixForRelationships
+            // 
+            this.chkSkipPrefixForRelationships.AutoSize = true;
+            this.chkSkipPrefixForRelationships.Location = new System.Drawing.Point(306, 21);
+            this.chkSkipPrefixForRelationships.Name = "chkSkipPrefixForRelationships";
+            this.chkSkipPrefixForRelationships.Size = new System.Drawing.Size(142, 17);
+            this.chkSkipPrefixForRelationships.TabIndex = 2;
+            this.chkSkipPrefixForRelationships.Text = "Skip prefix (relationships)";
+            this.chkSkipPrefixForRelationships.UseVisualStyleBackColor = true;
             // 
             // label33
             // 
@@ -791,7 +803,7 @@
             this.txtPrefix.Location = new System.Drawing.Point(235, 20);
             this.txtPrefix.MaxLength = 8;
             this.txtPrefix.Name = "txtPrefix";
-            this.txtPrefix.Size = new System.Drawing.Size(181, 20);
+            this.txtPrefix.Size = new System.Drawing.Size(56, 20);
             this.txtPrefix.TabIndex = 16;
             this.txtPrefix.Text = "xrmspdy";
             this.txtPrefix.Validating += new System.ComponentModel.CancelEventHandler(this.txtPrefix_Validating);
@@ -1620,6 +1632,7 @@
         private System.Windows.Forms.TextBox txtFieldWholeMinimum;
         private System.Windows.Forms.Label label18;
         private System.ComponentModel.BackgroundWorker bgWorkerDelete;
+        private System.Windows.Forms.CheckBox chkSkipPrefixForRelationships;
     }
 }
 
