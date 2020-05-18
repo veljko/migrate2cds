@@ -325,6 +325,7 @@ namespace XrmSpeedyUI
 
                 if (clbTables.SelectedIndex != -1)
                 {
+                    
                     grpEntity.Visible = true;
                     grpField.Visible = false;
                     GetTableEntity();
@@ -377,7 +378,6 @@ namespace XrmSpeedyUI
             {
                 txtEntityDisplayName.Text = clbTables.SelectedItem.ToString();
                 txtEntityPluralName.Text = clbTables.SelectedItem.ToString() + "s";
-                txtEntityPrimaryFieldSize.Text = "100";
             }
             else
             {
@@ -387,7 +387,6 @@ namespace XrmSpeedyUI
                     SelectedEntity.EntityMetadata.Description.LocalizedLabels.Where(l => l.LanguageCode == 1033).FirstOrDefault().Label :
                     string.Empty;
                 txtEntitySchemaName.Text = SelectedEntity.EntityMetadata.SchemaName.Split('_')[1];
-                txtEntityPrimaryFieldSize.Text = SelectedEntity.PrimaryFieldSize.ToString();
             }
         }
 
@@ -1158,33 +1157,6 @@ namespace XrmSpeedyUI
                         = txtEntityDescription.Text.Trim();
             else
                 SelectedEntity.EntityMetadata.Description = null;
-        }
-
-        private void txtEntityPrimaryFieldSize_Validated(object sender, EventArgs e)
-        {
-            int fieldSize;
-            int.TryParse(txtEntityPrimaryFieldSize.Text, out fieldSize);
-            SelectedEntity.PrimaryFieldSize = fieldSize;
-        }
-
-        private void txtEntityPrimaryFieldSize_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            string message = string.Empty;
-            bool error = false;
-
-            int fieldSize;
-            if (!int.TryParse(txtEntityPrimaryFieldSize.Text, out fieldSize) || fieldSize <= 0)
-            {
-                message = "Primary Field Size must be a number between 1 and 4000";
-                error = true;
-            }
-
-            if (error)
-            {
-                MessageBox.Show(message, "Error");
-                SelectedEntity = NewEntities.Find(c => c.OriginalTable == clbTables.SelectedItem.ToString().Replace(" [In Relationship]", string.Empty));
-                txtEntityPrimaryFieldSize.Text = SelectedEntity.PrimaryFieldSize.ToString();
-            }
         }
 
         private void txtFieldDisplayName_Validating(object sender, System.ComponentModel.CancelEventArgs e)
