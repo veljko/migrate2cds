@@ -62,6 +62,14 @@ namespace XrmSpeedy
                     value = new MemoAttributeMetadata();
                     ((MemoAttributeMetadata)value).MaxLength = 2000;
                     break;
+                case "Optionset":
+                    value = new PicklistAttributeMetadata();
+                    var optionSetMetadata = new OptionSetMetadata();
+                    ((OptionSetMetadata)optionSetMetadata).IsGlobal = true;
+                    ((OptionSetMetadata)optionSetMetadata).OptionSetType = OptionSetType.Picklist;
+                    ((OptionSetMetadata)optionSetMetadata).Name = prefix + "_" + name;
+                    ((PicklistAttributeMetadata)value).OptionSet = optionSetMetadata;
+                    break;
                 case "Date and Time":
                     value = new DateTimeAttributeMetadata();
                     ((DateTimeAttributeMetadata)value).Format = Microsoft.Xrm.Sdk.Metadata.DateTimeFormat.DateOnly;

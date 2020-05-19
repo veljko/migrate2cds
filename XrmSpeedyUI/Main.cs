@@ -537,6 +537,10 @@ namespace XrmSpeedyUI
                     DisplayFieldSpecific(grpFieldMultiple);
                     txtFieldMemoMaxLength.Text = ((MemoAttributeMetadata)field.AttributeMetadata).MaxLength.ToString();
                     break;
+                case AttributeTypeCode.Picklist:
+                    DisplayFieldSpecific(grpFieldOptionset);
+                    txtGlobalOptionsetName.Text = ((PicklistAttributeMetadata)field.AttributeMetadata).OptionSet.Name;
+                    break;
                 case AttributeTypeCode.DateTime:
                     DisplayFieldSpecific(grpFieldDate);
                     ddlFieldDateFormat.SelectedValue = ((DateTimeAttributeMetadata)field.AttributeMetadata).Format;
@@ -595,6 +599,9 @@ namespace XrmSpeedyUI
                     break;
                 case AttributeTypeCode.DateTime:
                     index = 7;
+                    break;
+                case AttributeTypeCode.Picklist:
+                    index = 8;
                     break;
             }
 
@@ -873,6 +880,9 @@ namespace XrmSpeedyUI
                     break;
                 case "Multiple Lines of Text":
                     DisplayFieldSpecific(grpFieldMultiple);
+                    break;
+                case "Optionset":
+                    DisplayFieldSpecific(grpFieldOptionset);
                     break;
                 case "Date and Time":
                     DisplayFieldSpecific(grpFieldDate);

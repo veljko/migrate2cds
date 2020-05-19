@@ -143,6 +143,10 @@ namespace XrmSpeedy
             {
                 return "Multiple Lines of Text";
             }
+            else if (datatype == "image")
+            {
+                return "Optionset";
+            }
             else
             {
                 return "Single Line of Text";

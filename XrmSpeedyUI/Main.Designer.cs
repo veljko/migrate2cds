@@ -150,6 +150,10 @@
             this.ddlRelationshipPrimary = new System.Windows.Forms.ComboBox();
             this.bgWorkerCreate = new System.ComponentModel.BackgroundWorker();
             this.bgWorkerDelete = new System.ComponentModel.BackgroundWorker();
+            this.grpFieldOptionset = new System.Windows.Forms.GroupBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.txtGlobalOptionsetName = new System.Windows.Forms.TextBox();
+            this.label54 = new System.Windows.Forms.Label();
             this.grpFieldTwoOption.SuspendLayout();
             this.grpFieldDecimal.SuspendLayout();
             this.grpFieldWhole.SuspendLayout();
@@ -168,6 +172,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbSpinner)).BeginInit();
             this.grpOptions.SuspendLayout();
             this.grpRelationships.SuspendLayout();
+            this.grpFieldOptionset.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCreateEntity
@@ -713,7 +718,7 @@
             // 
             this.grpFieldDate.Controls.Add(this.ddlFieldDateFormat);
             this.grpFieldDate.Controls.Add(this.label30);
-            this.grpFieldDate.Location = new System.Drawing.Point(895, 492);
+            this.grpFieldDate.Location = new System.Drawing.Point(891, 485);
             this.grpFieldDate.Name = "grpFieldDate";
             this.grpFieldDate.Size = new System.Drawing.Size(202, 127);
             this.grpFieldDate.TabIndex = 21;
@@ -1253,7 +1258,8 @@
             "Decimal Number",
             "Currency",
             "Multiple Lines of Text",
-            "Date and Time"});
+            "Date and Time",
+            "Optionset"});
             this.ddlFieldType.Location = new System.Drawing.Point(6, 121);
             this.ddlFieldType.Name = "ddlFieldType";
             this.ddlFieldType.Size = new System.Drawing.Size(206, 21);
@@ -1503,12 +1509,53 @@
             this.bgWorkerDelete.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgWorkerDelete_DoWork);
             this.bgWorkerDelete.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgWorkerDelete_RunWorkerCompleted);
             // 
+            // grpFieldOptionset
+            // 
+            this.grpFieldOptionset.Controls.Add(this.label53);
+            this.grpFieldOptionset.Controls.Add(this.txtGlobalOptionsetName);
+            this.grpFieldOptionset.Controls.Add(this.label54);
+            this.grpFieldOptionset.Location = new System.Drawing.Point(954, 480);
+            this.grpFieldOptionset.Name = "grpFieldOptionset";
+            this.grpFieldOptionset.Size = new System.Drawing.Size(202, 127);
+            this.grpFieldOptionset.TabIndex = 23;
+            this.grpFieldOptionset.TabStop = false;
+            this.grpFieldOptionset.Tag = "";
+            this.grpFieldOptionset.Visible = false;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.ForeColor = System.Drawing.Color.Red;
+            this.label53.Location = new System.Drawing.Point(112, 9);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(11, 13);
+            this.label53.TabIndex = 22;
+            this.label53.Text = "*";
+            // 
+            // txtGlobalOptionsetName
+            // 
+            this.txtGlobalOptionsetName.Location = new System.Drawing.Point(4, 25);
+            this.txtGlobalOptionsetName.MaxLength = 7;
+            this.txtGlobalOptionsetName.Name = "txtGlobalOptionsetName";
+            this.txtGlobalOptionsetName.Size = new System.Drawing.Size(172, 20);
+            this.txtGlobalOptionsetName.TabIndex = 4;
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(4, 10);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(112, 13);
+            this.label54.TabIndex = 2;
+            this.label54.Text = "Global optionset name";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(1174, 498);
+            this.Controls.Add(this.grpFieldOptionset);
             this.Controls.Add(this.grpRelationships);
             this.Controls.Add(this.grpOptions);
             this.Controls.Add(this.groupBox4);
@@ -1560,6 +1607,8 @@
             this.grpOptions.PerformLayout();
             this.grpRelationships.ResumeLayout(false);
             this.grpRelationships.PerformLayout();
+            this.grpFieldOptionset.ResumeLayout(false);
+            this.grpFieldOptionset.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1687,6 +1736,10 @@
         private System.Windows.Forms.TextBox txtPrimaryAttributeSize;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.CheckBox chkShortPrimaryAttributeName;
+        private System.Windows.Forms.GroupBox grpFieldOptionset;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.TextBox txtGlobalOptionsetName;
+        private System.Windows.Forms.Label label54;
     }
 }
 
